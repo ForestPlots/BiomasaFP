@@ -1,0 +1,5 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "aggregate", "weighted.mean")
+importFrom("stats", "coef", "complete.cases", "lm", "median",
+               "na.omit", "nls", "predict")
+importFrom("utils", "data", "head", "read.csv")

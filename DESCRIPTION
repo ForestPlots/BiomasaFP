@@ -1,0 +1,13 @@
+Package: BiomasaFP
+Type: Package
+Title: BiomasaFP: Functions for analysing data downloaded from ForestPlots.net
+Version: 0.3.0
+Author: Martin Sullivan, Gabriela Lopez-Gonzalez, Tim Baker
+Maintainer: Martin Sullivan <m.j.sullivan@leeds.ac.uk>
+Description: Contains functions for calculating biomass and biomass dynamics. Functions are set up to work with data downloaded from the ForestPlots.net database.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Depends: 
+    R (>= 2.10)
