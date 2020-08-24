@@ -93,6 +93,7 @@ stop("Palm equation set to TRUE when calculating basal area. Please set palm.eq 
  		ifelse(dead2[,paste(dbh,"_D",sep="")]<400,(dead2$Delta.time/2)*dead2$Class2,
  			(dead2$Delta.time/2)*dead2$Class3))
  	  dead2$DBH.death<-dead2$DBH.death+dead2[,paste(dbh,"_D",sep="")]
+ 	  dead2<-dead2[!is.na(dead2$TreeID),]
  	  #Height at death
  	  dead2$Height.dead<-height.mod(dead2$DBH.death,data=dead2)
  	  #AGB at death

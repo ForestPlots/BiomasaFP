@@ -104,6 +104,7 @@ dead2$LS.dead<-unobs.dat[match(paste(dead2$PlotViewID,dead2$Census.No),paste(uno
                 ifelse(dead2[,paste(dbh,"_D",sep="")]<400,dead2$LS.dead*dead2$Class2,
                         dead2$LS.dead*dead2$Class3))
           dead2$DBH.death<-dead2$DBH.death+dead2[,paste(dbh,"_D",sep="")]
+          dead2<-dead2[!is.na(dead2$TreeID),]
           #Height at death
           dead2$Height.dead<-height.mod(dbh=dead2$DBH.death,data=dead2)
           #AGB at death
