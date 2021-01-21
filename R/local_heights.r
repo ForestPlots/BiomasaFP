@@ -65,11 +65,11 @@ cont.all.fit<-hd.fit(htdata,"Continent",weib.only=TRUE,thresh=thresh,forest.type
 if(use.height.constrain==TRUE){
 plot.fit<-height.constrain(plot.fit,data,level="Plot",dbh=dbh,max.size=max.size,na.too.big=na.too.big)
 clust.fit<-height.constrain(clust.fit,data,level="Cluster",dbh=dbh,max.size=max.size,na.too.big=na.too.big)
-bio.fit<-height.constrain(bio.fit,data,level="BioR",dbh=dbh,max.size=max.size,na.too.big=na.too.big)
-cont.fit<-height.constrain(cont.fit,data,level="Continent",dbh=dbh,max.size=max.size,na.too.big=na.too.big)
+bio.fit<-height.constrain(bio.fit,data,level="BioR",dbh=dbh,max.size=max.size,na.too.big=na.too.big, weib.only=TRUE)
+cont.fit<-height.constrain(cont.fit,data,level="Continent",dbh=dbh,max.size=max.size,na.too.big=na.too.big, weib.only=TRUE)
 clust.all.fit<-height.constrain(clust.all.fit,data,level="Cluster",dbh=dbh,max.size=max.size,na.too.big=na.too.big,forest.type=FALSE)
-bio.all.fit<-height.constrain(bio.all.fit,data,level="BioR",dbh=dbh,max.size=max.size,na.too.big=na.too.big,forest.type=FALSE)
-cont.all.fit<-height.constrain(cont.all.fit,data,level="Continent",dbh=dbh,max.size=max.size,na.too.big=na.too.big,forest.type=FALSE)
+bio.all.fit<-height.constrain(bio.all.fit,data,level="BioR",dbh=dbh,max.size=max.size,na.too.big=na.too.big,forest.type=FALSE, weib.only=TRUE)
+cont.all.fit<-height.constrain(cont.all.fit,data,level="Continent",dbh=dbh,max.size=max.size,na.too.big=na.too.big,forest.type=FALSE, weib.only=TRUE)
 }
 
 #Match in best parameters

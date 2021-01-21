@@ -11,7 +11,8 @@ height.constrain(
   dbh = "D4",
   max.size = 80,
   na.too.big = FALSE,
-  forest.type = TRUE
+  forest.type = TRUE,
+  weib.only = FALSE
 )
 }
 \arguments{
@@ -28,6 +29,8 @@ height.constrain(
 \item{na.too.big}{Logical. Should parameters be set to NA if all models exceed height treshold. Default is FALSE.}
 
 \item{forest.type}{Logical. Should ID include forest type.}
+
+\item{weib.only}{Logical. Should consideration of best models be restricted to Weibull form (except if don't converge). Defauly is FALSE.}
 }
 \value{
 Dataframe with components returned by \code{\link{hd.fit}}, but with addtional columns giving the maximum diameter of the largest tree in the plot, the predicted maximum height using each model, and a column indicating whether the choice of best model was modified (0 = no change, 1 = previous best model excluded due to exceeding threshold, 2 = all models exceeded height threshold).
