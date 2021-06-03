@@ -25,5 +25,13 @@ Once you have read these in, the *mergefp* function combines them into a common 
 So while there is more you can do with the package (see https://martin-sullivan.shinyapps.io/BiomasaFP/), the basic route from data input to analysis is just a few lines of code.
 
 ```{r wadge, echo=TRUE}
-1+1
+# trees<-read.csv("TreeData.csv")
+# md <-read.csv("MetaData.csv")
+# wd <- read.csv("WoodDensity.csv")
+
+# Merge data
+dat<-mergefp(trees,md,wd)
+
+# Calculate AGB, AGWP etc
+SummaryAGWP(dat)
 ```
