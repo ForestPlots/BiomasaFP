@@ -18,16 +18,36 @@ SizeClassGrowth<-function(xdataset, method="median",dbh ="D4"){
    	Class1<-AGBData[AGBData[,dbh]>=50 & AGBData[,dbh]<200,]
 	Class2<-AGBData[AGBData[,dbh]>=200 & AGBData[,dbh]<400,]
 	Class3<-AGBData[AGBData[,dbh]>=400,]
+	G1<-data.frame("PlotViewID"=unique(AGBData$PlotViewID),"Delta.DBH"=0)
+	G2<-data.frame("PlotViewID"=unique(AGBData$PlotViewID),"Delta.DBH"=0)
+	G3<-data.frame("PlotViewID"=unique(AGBData$PlotViewID),"Delta.DBH"=0)
+
 	if(method=="median"){
+		if(nrow(Class1)>0){
 		G1<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class1,FUN=function(x)median(x,na.rm=T))
+		}
+		if(nrow(Class2)>0){
 		G2<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class2,FUN=function(x)median(x,na.rm=T))
+		}
+		if(nrow(Class3)>0){
 		G3<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class3,FUN=function(x)median(x,na.rm=T))
+		}
 	}else{
+		if(nrow(Class1)>0){
 		G1<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class1,FUN=function(x)mean(x,na.rm=T))
+		}
+		if(nrow(Class2)>0){
 		G2<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class2,FUN=function(x)mean(x,na.rm=T))
+		}
+		if(nrow(Class3)>0){
 		G3<-aggregate(Delta.DBH/Delta.time ~ PlotViewID, data=Class3,FUN=function(x)mean(x,na.rm=T))
+		}
 	}
 		WD<-aggregate(WD~PlotViewID,data=AGBData,FUN=function(x)mean(x,na.rm=T))
+	names(G1)[2]<-"DeltaDBH"
+	names(G2)[2]<-"DeltaDBH"
+	names(G3)[2]<-"DeltaDBH"
+
 	GA<-merge(G1,G2,by="PlotViewID",all.x=T)
 	GB<-merge(GA,G3,by="PlotViewID",all.x=T)
 	GC<-merge(GB,WD,by="PlotViewID",all.x=T)
