@@ -14,7 +14,7 @@ Please see https://martin-sullivan.shinyapps.io/BiomasaFP/ to explore how to use
 Visit www.ForestPlots.net for information about the ForestPlots database and how to get involved.
 
 ## Getting started
-BiomasaFP is designed to be used with outputs from the ForestPlots.net dataset. The functions assume that your data has certain columns as found in the output of ForestPlots.net. This means you can do analyses with relatively little user input if your data has been output from ForestPlots.net. If your data are not in ForestPlots (why???!), you might find the BIOMASS R package (https://cran.r-project.org/web/packages/BIOMASS/index.html) easier to use, but note that BIOMASS does not give you woody productivity and stem dynamics.
+BiomasaFP is designed to be used with outputs from the ForestPlots.net dataset. The functions assume that your data has certain columns as found in the output of ForestPlots.net. This means you can do analyses with relatively little user input if your data has been output from ForestPlots.net. If your data are not in ForestPlots (why???!), you might find the BIOMASS R package (https://cran.r-project.org/web/packages/BIOMASS/index.html) easier to use, but note that BIOMASS does not give you woody productivity and stem dynamics (see https://rpubs.com/martinsulli/BiomassAndBiomasa for using the packages together).
 
 The BiomasaFP R package needs three inputs: (1) tree by tree data from the advanced search, (2) metadata from the query library (Basic plot informaton>Plot Information for R Package V1.1) and (3) wood density of individual trees from the query library (Wood Density>Wood Density of Individual trees).
 
